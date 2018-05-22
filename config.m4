@@ -1,22 +1,19 @@
 dnl $Id$
-dnl config.m4 for extension example
-PHP_ARG_WITH(example, for example support,
-[  --with-example[=FILE]       Include example support. File is the optional path to example-config])
-PHP_ARG_ENABLE(example-debug, whether to enable debugging support in example,
-[  --enable-example-debug        example: Enable debugging support in example], no, no)
-PHP_ARG_WITH(example-extra, for extra libraries for example,
-[  --with-example-extra=DIR      example: Location of extra libraries for example], no, no)
+dnl config.m4 for extension hello
+PHP_ARG_WITH(hello, for hello support,
+[  --with-hello[=FILE]       Include hello support. File is the optional path to hello-config])
 
 dnl 检测扩展是否已启用
-if test "$PHP_EXAMPLE" != "no"; then
+if test "$PHP_HELLO" != "no"; then
 
-  dnl 检测 example-config。首先尝试所给出的路径，然后在 $PATH 中寻找
-  AC_MSG_CHECKING([for example-config])
-  EXAMPLE_CONFIG="example-config"
-  if test "$PHP_EXAMPLE" != "yes"; then
-    EXAMPLE_PATH=$PHP_EXAMPLE
+  dnl 检测 hello-config。首先尝试所给出的路径，然后在 $PATH 中寻找
+  AC_MSG_CHECKING([for hello-config])
+
+  HELLO_CONFIG="hello-config"
+  if test "$PHP_HELLO" != "yes"; then
+    HELLO_PATH=$PHP_HELLO
   else
-    EXAMPLE_PATH=`$php_shtool path $EXAMPLE_CONFIG`
+    HELLO_PATH=`$php_shtool path $HELLO_CONFIG`
   fi
 
   dnl 如果找到可用的 example-config，就使用它
