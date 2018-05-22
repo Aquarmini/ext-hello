@@ -5,5 +5,6 @@ PHP_MSHUTDOWN_FUNCTION(hello);
 PHP_RINIT_FUNCTION(hello);
 PHP_RSHUTDOWN_FUNCTION(hello);
 PHP_MINFO_FUNCTION(hello);
+
 PHP_METHOD(hello,__construct);
 PHP_METHOD(hello,say);

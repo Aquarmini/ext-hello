@@ -55,12 +55,13 @@ PHP_MINIT_FUNCTION(hello)
 }
 /* }}} */
 
-/* 模块关闭时调用
-*/
+/* {{{ PHP_MSHUTDOWN_FUNCTION
+ */
 PHP_MSHUTDOWN_FUNCTION(hello)
 {
     return SUCCESS;
 }
+/* }}} */
 
 /* 每次请求前调用
 */
@@ -76,7 +77,7 @@ PHP_RSHUTDOWN_FUNCTION(hello)
 
 /* phpinfo()输出扩展信息
 */
-PHP_MINFO_FUNCTION(test)
+PHP_MINFO_FUNCTION(hello)
 {
     php_info_print_table_start();
     php_info_print_table_header(2, "hello support", "enabled");
