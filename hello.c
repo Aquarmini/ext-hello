@@ -78,9 +78,6 @@ PHP_RINIT_FUNCTION(hello)
     return SUCCESS;
 }
 
-/*
-/* 每次请求结束时调用
-*/
 PHP_RSHUTDOWN_FUNCTION(hello)
 {
     return SUCCESS;
