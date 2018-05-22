@@ -1,7 +1,3 @@
-//
-// Created by 李铭昕 on 2018/5/22.
-//
-
 #ifdef HAVE_CONFIG_H
 #include "config.h"
 #endif
@@ -18,9 +14,9 @@ const zend_function_entry hello_functions[] = {
 };
 
 const zend_function_entry hello_methods[] = {
-        ZEND_ME(hello, __construct, NULL, ZEND_ACC_PUBLIC|ZEND_ACC_CTOR)
-        ZEND_ME(hello, say, NULL, ZEND_ACC_PUBLIC)
-        PHP_FE_END	/* Must be the last line in foolconf_functions[] */
+    ZEND_ME(hello, __construct, NULL, ZEND_ACC_PUBLIC)
+    ZEND_ME(hello, say, NULL, ZEND_ACC_PUBLIC)
+    PHP_FE_END	/* Must be the last line in foolconf_functions[] */
 };
 
 /*
@@ -38,7 +34,7 @@ zend_module_entry hello_module_entry = {
         PHP_RSHUTDOWN(hello),     /* Replace with NULL if there's nothing to do at request end */
         PHP_MINFO(hello),
 #if ZEND_MODULE_API_NO >= 20010901
-        PHP_FOOLSOCK_VERSION, /* Replace with version number for your extension */
+        PHP_HELLO_VERSION, /* Replace with version number for your extension */
 #endif
         STANDARD_MODULE_PROPERTIES
 };
@@ -51,8 +47,6 @@ ZEND_GET_MODULE(hello)
 */
 PHP_MINIT_FUNCTION(hello)
 {
-    /* 注册全局变量 */
-//    REGISTER_INI_ENTRIES();
     zend_class_entry ce;
     INIT_CLASS_ENTRY(ce, "Hello",hello_methods);
 
@@ -65,9 +59,6 @@ PHP_MINIT_FUNCTION(hello)
 */
 PHP_MSHUTDOWN_FUNCTION(hello)
 {
-    /* 释放全局变量 */
-//    UNREGISTER_INI_ENTRIES();
-
     return SUCCESS;
 }
 
@@ -90,10 +81,6 @@ PHP_MINFO_FUNCTION(test)
     php_info_print_table_start();
     php_info_print_table_header(2, "hello support", "enabled");
     php_info_print_table_end();
-
-    /* 是否输出php.ini中的配置信息
-    DISPLAY_INI_ENTRIES();
-    */
 }
 
 PHP_METHOD(hello,__construct)

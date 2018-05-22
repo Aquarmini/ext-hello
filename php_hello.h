@@ -1,4 +1,4 @@
-#define PHP_FOOLSOCK_VERSION "0.0.1" /* Replace with version number for your extension */
+#define PHP_HELLO_VERSION "0.0.1" /* Replace with version number for your extension */
 
 PHP_MINIT_FUNCTION(hello);
 PHP_MSHUTDOWN_FUNCTION(hello);
