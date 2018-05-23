@@ -10,7 +10,8 @@
 zend_class_entry *hello_ce;
 
 const zend_function_entry hello_functions[] = {
-        PHP_FE_END     /* Must be the last line in test_functions[] */
+    ZEND_FE(hello_world, NULL)
+    PHP_FE_END     /* Must be the last line in test_functions[] */
 };
 
 const zend_function_entry hello_methods[] = {
@@ -126,6 +127,13 @@ PHP_METHOD(hello, hi)
 
    result = strpprintf(0, "hi, %s!", ZSTR_VAL(name));
    RETURN_STR(result);
+}
+
+PHP_FUNCTION(hello_world)
+{
+    char *str="hello world!";
+
+    RETURN_STRING(str);
 }
 
 

@@ -11,3 +11,5 @@ PHP_METHOD(hello,rTrue);
 PHP_METHOD(hello,rInt);
 PHP_METHOD(hello,rString);
 PHP_METHOD(hello,hi);
+
+PHP_FUNCTION(hello_world);

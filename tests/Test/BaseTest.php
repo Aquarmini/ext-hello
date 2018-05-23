@@ -33,7 +33,8 @@ class BaseTest extends TestCase
     public function testRString()
     {
         $obj = new Hello();
-        $this->assertTrue($obj->rString() === 'hello world!');
+        $this->assertEquals('hello world!', $obj->rString());
+        $this->assertEquals('hello world!', hello_world());
     }
 
     public function testHi()
