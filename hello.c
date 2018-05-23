@@ -98,7 +98,9 @@ PHP_METHOD(hello,rTrue)
 
 PHP_METHOD(hello,rString)
 {
-    RETURN_TRUE;
+    char *str="hello world!";
+
+    RETURN_STRING(str);
 }
 
 PHP_METHOD(hello,rInt)

@@ -29,4 +29,10 @@ class BaseTest extends TestCase
         $obj = new Hello();
         $this->assertTrue($obj->rInt() === 11521);
     }
+
+    public function testRString()
+    {
+        $obj = new Hello();
+        $this->assertTrue($obj->rString() === 'hello world!');
+    }
 }
