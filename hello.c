@@ -100,7 +100,7 @@ PHP_METHOD(hello,rString)
 {
     char *str="hello world!";
 
-    RETURN_STRING(str);
+    RETURN_STRING(str, 0);
 }
 
 PHP_METHOD(hello,rInt)
