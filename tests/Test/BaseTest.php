@@ -18,9 +18,15 @@ class BaseTest extends TestCase
         $this->assertTrue(true);
     }
 
-    public function testSay()
+    public function testRTrue()
     {
         $obj = new Hello();
-        $this->assertTrue($obj->say());
+        $this->assertTrue($obj->rTrue());
+    }
+
+    public function testRInt()
+    {
+        $obj = new Hello();
+        $this->assertTrue($obj->rInt() === 11521);
     }
 }

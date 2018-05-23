@@ -15,7 +15,9 @@ const zend_function_entry hello_functions[] = {
 
 const zend_function_entry hello_methods[] = {
     ZEND_ME(hello, __construct, NULL, ZEND_ACC_PUBLIC)
-    ZEND_ME(hello, say, NULL, ZEND_ACC_PUBLIC)
+    ZEND_ME(hello, rTrue, NULL, ZEND_ACC_PUBLIC)
+    ZEND_ME(hello, rInt, NULL, ZEND_ACC_PUBLIC)
+    ZEND_ME(hello, rString, NULL, ZEND_ACC_PUBLIC)
     PHP_FE_END	/* Must be the last line in foolconf_functions[] */
 };
 
@@ -89,9 +91,19 @@ PHP_METHOD(hello,__construct)
 
 }
 
-PHP_METHOD(hello,say)
+PHP_METHOD(hello,rTrue)
 {
     RETURN_TRUE;
+}
+
+PHP_METHOD(hello,rString)
+{
+    RETURN_TRUE;
+}
+
+PHP_METHOD(hello,rInt)
+{
+    RETURN_LONG(11521);
 }
 
 

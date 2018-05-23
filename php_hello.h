@@ -7,4 +7,6 @@ PHP_RSHUTDOWN_FUNCTION(hello);
 PHP_MINFO_FUNCTION(hello);
 
 PHP_METHOD(hello,__construct);
-PHP_METHOD(hello,say);
+PHP_METHOD(hello,rTrue);
+PHP_METHOD(hello,rInt);
+PHP_METHOD(hello,rString);
