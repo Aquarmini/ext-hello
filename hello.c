@@ -18,6 +18,7 @@ const zend_function_entry hello_methods[] = {
     ZEND_ME(hello, rTrue, NULL, ZEND_ACC_PUBLIC)
     ZEND_ME(hello, rInt, NULL, ZEND_ACC_PUBLIC)
     ZEND_ME(hello, rString, NULL, ZEND_ACC_PUBLIC)
+    ZEND_ME(hello, hi, NULL, ZEND_ACC_PUBLIC)
     PHP_FE_END	/* Must be the last line in foolconf_functions[] */
 };
 
@@ -106,6 +107,25 @@ PHP_METHOD(hello,rString)
 PHP_METHOD(hello,rInt)
 {
     RETURN_LONG(11521);
+}
+
+PHP_METHOD(hello, hi)
+{
+   zend_string *name,*result;
+
+   #ifndef FAST_ZPP
+       /* Get function parameters and do error-checking. */
+       if (zend_parse_parameters(ZEND_NUM_ARGS(), "S", &name) == FAILURE) {
+           return;
+       }
+   #else
+       ZEND_PARSE_PARAMETERS_START(1, 1)
+           Z_PARAM_STR(name)
+       ZEND_PARSE_PARAMETERS_END();
+   #endif
+
+   result = strpprintf(0, "hi, %s!", ZSTR_VAL(name));
+   RETURN_STR(result);
 }
 
 

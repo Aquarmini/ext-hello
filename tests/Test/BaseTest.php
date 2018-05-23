@@ -35,4 +35,10 @@ class BaseTest extends TestCase
         $obj = new Hello();
         $this->assertTrue($obj->rString() === 'hello world!');
     }
+
+    public function testHi()
+    {
+        $obj = new Hello();
+        $this->assertTrue($obj->hi('limx') === 'hi, limx!');
+    }
 }
